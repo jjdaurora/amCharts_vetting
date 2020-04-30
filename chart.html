@@ -1,0 +1,575 @@
+<!-- Styles -->
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+    }
+    
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am4core.ready(function() {
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    // Create chart
+    var chart = am4core.create("chartdiv", am4charts.XYChart);
+    
+    var data = [];
+    var price1 = 1000, price2 = 1200;
+    var quantity = 30000;
+    // for (var i = 0; i < 360; i++) {
+    //   price1 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 100);
+    //   data.push({ date1: new Date(2015, 0, i), price1: price1 });
+    // }
+    for (var i = 0; i < 360; i++) {
+      price2 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 100);
+      data.push({ date2: new Date(2017, 0, i), price2: price2 });
+    }
+
+    data.push([
+  {
+    "date1": "2010-07-30T00:00:00.000Z",
+    "price1": 19.94
+  },
+  {
+    "date1": "2010-08-31T00:00:00.000Z",
+    "price1": 19.48
+  },
+  {
+    "date1": "2010-09-30T00:00:00.000Z",
+    "price1": 20.405
+  },
+  {
+    "date1": "2010-10-29T00:00:00.000Z",
+    "price1": 21.84
+  },
+  {
+    "date1": "2010-11-30T00:00:00.000Z",
+    "price1": 35.33
+  },
+  {
+    "date1": "2010-12-31T00:00:00.000Z",
+    "price1": 26.63
+  },
+  {
+    "date1": "2011-01-31T00:00:00.000Z",
+    "price1": 24.1
+  },
+  {
+    "date1": "2011-02-28T00:00:00.000Z",
+    "price1": 23.89
+  },
+  {
+    "date1": "2011-03-31T00:00:00.000Z",
+    "price1": 27.75
+  },
+  {
+    "date1": "2011-04-29T00:00:00.000Z",
+    "price1": 27.6
+  },
+  {
+    "date1": "2011-05-31T00:00:00.000Z",
+    "price1": 30.14
+  },
+  {
+    "date1": "2011-06-30T00:00:00.000Z",
+    "price1": 29.13
+  },
+  {
+    "date1": "2011-07-29T00:00:00.000Z",
+    "price1": 28.17
+  },
+  {
+    "date1": "2011-08-31T00:00:00.000Z",
+    "price1": 24.74
+  },
+  {
+    "date1": "2011-09-30T00:00:00.000Z",
+    "price1": 24.39
+  },
+  {
+    "date1": "2011-10-31T00:00:00.000Z",
+    "price1": 29.37
+  },
+  {
+    "date1": "2011-11-30T00:00:00.000Z",
+    "price1": 32.74
+  },
+  {
+    "date1": "2011-12-30T00:00:00.000Z",
+    "price1": 28.56
+  },
+  {
+    "date1": "2012-01-31T00:00:00.000Z",
+    "price1": 29.07
+  },
+  {
+    "date1": "2012-02-29T00:00:00.000Z",
+    "price1": 33.41
+  },
+  {
+    "date1": "2012-03-30T00:00:00.000Z",
+    "price1": 37.24
+  },
+  {
+    "date1": "2012-04-30T00:00:00.000Z",
+    "price1": 33.13
+  },
+  {
+    "date1": "2012-05-31T00:00:00.000Z",
+    "price1": 29.5
+  },
+  {
+    "date1": "2012-06-29T00:00:00.000Z",
+    "price1": 31.29
+  },
+  {
+    "date1": "2012-07-31T00:00:00.000Z",
+    "price1": 27.42
+  },
+  {
+    "date1": "2012-08-31T00:00:00.000Z",
+    "price1": 28.52
+  },
+  {
+    "date1": "2012-09-28T00:00:00.000Z",
+    "price1": 29.28
+  },
+  {
+    "date1": "2012-10-31T00:00:00.000Z",
+    "price1": 28.1314
+  },
+  {
+    "date1": "2012-11-30T00:00:00.000Z",
+    "price1": 33.82
+  },
+  {
+    "date1": "2012-12-31T00:00:00.000Z",
+    "price1": 33.87
+  },
+  {
+    "date1": "2013-01-31T00:00:00.000Z",
+    "price1": 37.51
+  },
+  {
+    "date1": "2013-02-28T00:00:00.000Z",
+    "price1": 34.83
+  },
+  {
+    "date1": "2013-03-28T00:00:00.000Z",
+    "price1": 37.89
+  },
+  {
+    "date1": "2013-04-30T00:00:00.000Z",
+    "price1": 53.99
+  },
+  {
+    "date1": "2013-05-31T00:00:00.000Z",
+    "price1": 97.76
+  },
+  {
+    "date1": "2013-06-28T00:00:00.000Z",
+    "price1": 107.36
+  },
+  {
+    "date1": "2013-07-31T00:00:00.000Z",
+    "price1": 134.28
+  },
+  {
+    "date1": "2013-08-30T00:00:00.000Z",
+    "price1": 169
+  },
+  {
+    "date1": "2013-09-30T00:00:00.000Z",
+    "price1": 193.37
+  },
+  {
+    "date1": "2013-10-31T00:00:00.000Z",
+    "price1": 159.94
+  },
+  {
+    "date1": "2013-11-29T00:00:00.000Z",
+    "price1": 127.28
+  },
+  {
+    "date1": "2013-12-31T00:00:00.000Z",
+    "price1": 150.429
+  },
+  {
+    "date1": "2014-01-31T00:00:00.000Z",
+    "price1": 181.41
+  },
+  {
+    "date1": "2014-02-28T00:00:00.000Z",
+    "price1": 244.81
+  },
+  {
+    "date1": "2014-03-31T00:00:00.000Z",
+    "price1": 208.45
+  },
+  {
+    "date1": "2014-04-30T00:00:00.000Z",
+    "price1": 207.89
+  },
+  {
+    "date1": "2014-05-30T00:00:00.000Z",
+    "price1": 207.77
+  },
+  {
+    "date1": "2014-06-30T00:00:00.000Z",
+    "price1": 240.06
+  },
+  {
+    "date1": "2014-07-31T00:00:00.000Z",
+    "price1": 223.3
+  },
+  {
+    "date1": "2014-08-29T00:00:00.000Z",
+    "price1": 269.7
+  },
+  {
+    "date1": "2014-09-30T00:00:00.000Z",
+    "price1": 242.68
+  },
+  {
+    "date1": "2014-10-31T00:00:00.000Z",
+    "price1": 241.7
+  },
+  {
+    "date1": "2014-11-28T00:00:00.000Z",
+    "price1": 244.52
+  },
+  {
+    "date1": "2014-12-31T00:00:00.000Z",
+    "price1": 222.41
+  },
+  {
+    "date1": "2015-01-30T00:00:00.000Z",
+    "price1": 203.6
+  },
+  {
+    "date1": "2015-02-27T00:00:00.000Z",
+    "price1": 203.34
+  },
+  {
+    "date1": "2015-03-31T00:00:00.000Z",
+    "price1": 188.77
+  },
+  {
+    "date1": "2015-04-30T00:00:00.000Z",
+    "price1": 226.05
+  },
+  {
+    "date1": "2015-05-29T00:00:00.000Z",
+    "price1": 250.8
+  },
+  {
+    "date1": "2015-06-30T00:00:00.000Z",
+    "price1": 268.26
+  },
+  {
+    "date1": "2015-07-31T00:00:00.000Z",
+    "price1": 266.15
+  },
+  {
+    "date1": "2015-08-31T00:00:00.000Z",
+    "price1": 249.06
+  },
+  {
+    "date1": "2015-09-30T00:00:00.000Z",
+    "price1": 248.4
+  },
+  {
+    "date1": "2015-10-30T00:00:00.000Z",
+    "price1": 206.93
+  },
+  {
+    "date1": "2015-11-30T00:00:00.000Z",
+    "price1": 230.26
+  },
+  {
+    "date1": "2015-12-31T00:00:00.000Z",
+    "price1": 240.01
+  },
+  {
+    "date1": "2016-01-29T00:00:00.000Z",
+    "price1": 191.2
+  },
+  {
+    "date1": "2016-02-29T00:00:00.000Z",
+    "price1": 191.93
+  },
+  {
+    "date1": "2016-03-31T00:00:00.000Z",
+    "price1": 229.77
+  },
+  {
+    "date1": "2016-04-29T00:00:00.000Z",
+    "price1": 240.76
+  },
+  {
+    "date1": "2016-05-31T00:00:00.000Z",
+    "price1": 223.23
+  },
+  {
+    "date1": "2016-06-30T00:00:00.000Z",
+    "price1": 212.28
+  },
+  {
+    "date1": "2016-07-29T00:00:00.000Z",
+    "price1": 234.79
+  },
+  {
+    "date1": "2016-08-31T00:00:00.000Z",
+    "price1": 212.01
+  },
+  {
+    "date1": "2016-09-30T00:00:00.000Z",
+    "price1": 204.03
+  },
+  {
+    "date1": "2016-10-31T00:00:00.000Z",
+    "price1": 197.73
+  },
+  {
+    "date1": "2016-11-30T00:00:00.000Z",
+    "price1": 189.4
+  },
+  {
+    "date1": "2016-12-30T00:00:00.000Z",
+    "price1": 213.69
+  },
+  {
+    "date1": "2017-01-31T00:00:00.000Z",
+    "price1": 251.93
+  },
+  {
+    "date1": "2017-02-28T00:00:00.000Z",
+    "price1": 249.99
+  },
+  {
+    "date1": "2017-03-31T00:00:00.000Z",
+    "price1": 278.3
+  },
+  {
+    "date1": "2017-04-28T00:00:00.000Z",
+    "price1": 314.07
+  },
+  {
+    "date1": "2017-05-31T00:00:00.000Z",
+    "price1": 341.01
+  },
+  {
+    "date1": "2017-06-30T00:00:00.000Z",
+    "price1": 361.61
+  },
+  {
+    "date1": "2017-07-31T00:00:00.000Z",
+    "price1": 323.47
+  },
+  {
+    "date1": "2017-08-31T00:00:00.000Z",
+    "price1": 355.9
+  },
+  {
+    "date1": "2017-09-29T00:00:00.000Z",
+    "price1": 341.1
+  },
+  {
+    "date1": "2017-10-31T00:00:00.000Z",
+    "price1": 331.53
+  },
+  {
+    "date1": "2017-11-30T00:00:00.000Z",
+    "price1": 308.85
+  },
+  {
+    "date1": "2017-12-29T00:00:00.000Z",
+    "price1": 311.35
+  },
+  {
+    "date1": "2018-01-31T00:00:00.000Z",
+    "price1": 354.31
+  },
+  {
+    "date1": "2018-02-28T00:00:00.000Z",
+    "price1": 343.06
+  },
+  {
+    "date1": "2018-03-29T00:00:00.000Z",
+    "price1": 266.13
+  },
+  {
+    "date1": "2018-04-30T00:00:00.000Z",
+    "price1": 293.9
+  },
+  {
+    "date1": "2018-05-31T00:00:00.000Z",
+    "price1": 284.73
+  },
+  {
+    "date1": "2018-06-29T00:00:00.000Z",
+    "price1": 342.95
+  },
+  {
+    "date1": "2018-07-31T00:00:00.000Z",
+    "price1": 298.14
+  },
+  {
+    "date1": "2018-08-31T00:00:00.000Z",
+    "price1": 301.66
+  },
+  {
+    "date1": "2018-09-28T00:00:00.000Z",
+    "price1": 264.77
+  },
+  {
+    "date1": "2018-10-31T00:00:00.000Z",
+    "price1": 337.32
+  },
+  {
+    "date1": "2018-11-30T00:00:00.000Z",
+    "price1": 350.48
+  },
+  {
+    "date1": "2018-12-31T00:00:00.000Z",
+    "price1": 332.8
+  },
+  {
+    "date1": "2019-01-31T00:00:00.000Z",
+    "price1": 307.02
+  },
+  {
+    "date1": "2019-02-28T00:00:00.000Z",
+    "price1": 319.88
+  },
+  {
+    "date1": "2019-03-29T00:00:00.000Z",
+    "price1": 279.86
+  },
+  {
+    "date1": "2019-04-30T00:00:00.000Z",
+    "price1": 238.69
+  },
+  {
+    "date1": "2019-05-31T00:00:00.000Z",
+    "price1": 185.16
+  },
+  {
+    "date1": "2019-06-28T00:00:00.000Z",
+    "price1": 223.46
+  },
+  {
+    "date1": "2019-07-31T00:00:00.000Z",
+    "price1": 241.61
+  },
+  {
+    "date1": "2019-08-30T00:00:00.000Z",
+    "price1": 225.61
+  },
+  {
+    "date1": "2019-09-30T00:00:00.000Z",
+    "price1": 240.87
+  },
+  {
+    "date1": "2019-10-31T00:00:00.000Z",
+    "price1": 314.92
+  },
+  {
+    "date1": "2019-11-29T00:00:00.000Z",
+    "price1": 329.94
+  },
+  {
+    "date1": "2019-12-31T00:00:00.000Z",
+    "price1": 418.33
+  },
+  {
+    "date1": "2020-01-31T00:00:00.000Z",
+    "price1": 650.57
+  },
+  {
+    "date1": "2020-02-28T00:00:00.000Z",
+    "price1": 667.99
+  },
+  {
+    "date1": "2020-03-31T00:00:00.000Z",
+    "price1": 524
+  },
+  {
+    "date1": "2020-04-28T00:00:00.000Z",
+    "price1": 769.12
+  }
+])
+    
+    chart.data = data;
+    
+    var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.grid.template.location = 0;
+    dateAxis.renderer.labels.template.fill = am4core.color("#e59165");
+    
+    var dateAxis2 = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis2.renderer.grid.template.location = 0;
+    dateAxis2.renderer.labels.template.fill = am4core.color("#dfcc64");
+    
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.tooltip.disabled = true;
+    valueAxis.renderer.labels.template.fill = am4core.color("#e59165");
+    
+    valueAxis.renderer.minWidth = 60;
+    
+    var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis2.tooltip.disabled = true;
+    valueAxis2.renderer.labels.template.fill = am4core.color("#dfcc64");
+    valueAxis2.renderer.minWidth = 60;
+    valueAxis2.syncWithAxis = valueAxis;
+    
+    var series = chart.series.push(new am4charts.LineSeries());
+    series.name = "2015";
+    series.dataFields.dateX = "date1";
+    series.dataFields.valueY = "price1";
+    series.tooltipText = "{valueY.value}";
+    series.fill = am4core.color("#e59165");
+    series.stroke = am4core.color("#e59165");
+    //series.strokeWidth = 3;
+    
+    var series2 = chart.series.push(new am4charts.LineSeries());
+    series2.name = "2017";
+    series2.dataFields.dateX = "date2";
+    series2.dataFields.valueY = "price2";
+    series2.yAxis = valueAxis2;
+    series2.xAxis = dateAxis2;
+    series2.tooltipText = "{valueY.value}";
+    series2.fill = am4core.color("#dfcc64");
+    series2.stroke = am4core.color("#dfcc64");
+    //series2.strokeWidth = 3;
+    
+    chart.cursor = new am4charts.XYCursor();
+    chart.cursor.xAxis = dateAxis2;
+    
+    var scrollbarX = new am4charts.XYChartScrollbar();
+    scrollbarX.series.push(series);
+    chart.scrollbarX = scrollbarX;
+    
+    chart.legend = new am4charts.Legend();
+    chart.legend.parent = chart.plotContainer;
+    chart.legend.zIndex = 100;
+    
+    valueAxis2.renderer.grid.template.strokeOpacity = 0.07;
+    dateAxis2.renderer.grid.template.strokeOpacity = 0.07;
+    dateAxis.renderer.grid.template.strokeOpacity = 0.07;
+    valueAxis.renderer.grid.template.strokeOpacity = 0.07;
+    
+    }); // end am4core.ready()
+    </script>
+    
+    <!-- HTML -->
+    <div id="chartdiv"></div>

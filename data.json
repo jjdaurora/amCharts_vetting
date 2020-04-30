@@ -1,0 +1,6 @@
+if (b['cp.location'] && (b['cp.location'].indexOf("country", "US")) > 0) {
+  return (triggerConsentMgr = true)
+}
+else {
+  retrun (triggerConsentMgr = false)
+}
